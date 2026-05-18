@@ -1,0 +1,272 @@
+Microsoft Windows [Version 10.0.26200.8246]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Windows\System32>cd C:\Program Files\MySQL\MySQL Server 8.0\bin
+
+
+
+C:\Program Files\MySQL\MySQL Server 8.0\bin>mysql -u root -p
+Enter password: *****
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 10
+Server version: 8.0.43 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2025, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| monthly_sales      |
+| mysql              |
+| performance_schema |
+| primacy            |
+| sakila             |
+| sales              |
+| sys                |
+| workbenc_example   |
+| world              |
++--------------------+
+10 rows in set (0.16 sec)
+
+mysql> use sales;
+Database changed
+mysql> show tables;
++-----------------+
+| Tables_in_sales |
++-----------------+
+| customers       |
+| date            |
+| markets         |
+| products        |
+| transactions    |
++-----------------+
+5 rows in set (0.02 sec)
+
+mysql> select * from customers;
++---------------+--------------------------+----------------+
+| customer_code | custmer_name             | customer_type  |
++---------------+--------------------------+----------------+
+| Cus001        | Surge Stores             | Brick & Mortar |
+| Cus002        | Nomad Stores             | Brick & Mortar |
+| Cus003        | Excel Stores             | Brick & Mortar |
+| Cus004        | Surface Stores           | Brick & Mortar |
+| Cus005        | Premium Stores           | Brick & Mortar |
+| Cus006        | Electricalsara Stores    | Brick & Mortar |
+| Cus007        | Info Stores              | Brick & Mortar |
+| Cus008        | Acclaimed Stores         | Brick & Mortar |
+| Cus009        | Electricalsquipo Stores  | Brick & Mortar |
+| Cus010        | Atlas Stores             | Brick & Mortar |
+| Cus011        | Flawless Stores          | Brick & Mortar |
+| Cus012        | Integration Stores       | Brick & Mortar |
+| Cus013        | Unity Stores             | Brick & Mortar |
+| Cus014        | Forward Stores           | Brick & Mortar |
+| Cus015        | Electricalsbea Stores    | Brick & Mortar |
+| Cus016        | Logic Stores             | Brick & Mortar |
+| Cus017        | Epic Stores              | Brick & Mortar |
+| Cus018        | Electricalslance Stores  | Brick & Mortar |
+| Cus019        | Electricalsopedia Stores | Brick & Mortar |
+| Cus020        | Nixon                    | E-Commerce     |
+| Cus021        | Modular                  | E-Commerce     |
+| Cus022        | Electricalslytical       | E-Commerce     |
+| Cus023        | Sound                    | E-Commerce     |
+| Cus024        | Power                    | E-Commerce     |
+| Cus025        | Path                     | E-Commerce     |
+| Cus026        | Insight                  | E-Commerce     |
+| Cus027        | Control                  | E-Commerce     |
+| Cus028        | Sage                     | E-Commerce     |
+| Cus029        | Electricalsocity         | E-Commerce     |
+| Cus030        | Synthetic                | E-Commerce     |
+| Cus031        | Zone                     | E-Commerce     |
+| Cus032        | Elite                    | E-Commerce     |
+| Cus033        | All-Out                  | E-Commerce     |
+| Cus034        | Expression               | E-Commerce     |
+| Cus035        | Relief                   | E-Commerce     |
+| Cus036        | Novus                    | E-Commerce     |
+| Cus037        | Propel                   | E-Commerce     |
+| Cus038        | Leader                   | E-Commerce     |
++---------------+--------------------------+----------------+
+38 rows in set (0.05 sec)
+
+mysql> select customer_name from customers;
+ERROR 1054 (42S22): Unknown column 'customer_name' in 'field list'
+mysql> select custmer_name from customers;
++--------------------------+
+| custmer_name             |
++--------------------------+
+| Surge Stores             |
+| Nomad Stores             |
+| Excel Stores             |
+| Surface Stores           |
+| Premium Stores           |
+| Electricalsara Stores    |
+| Info Stores              |
+| Acclaimed Stores         |
+| Electricalsquipo Stores  |
+| Atlas Stores             |
+| Flawless Stores          |
+| Integration Stores       |
+| Unity Stores             |
+| Forward Stores           |
+| Electricalsbea Stores    |
+| Logic Stores             |
+| Epic Stores              |
+| Electricalslance Stores  |
+| Electricalsopedia Stores |
+| Nixon                    |
+| Modular                  |
+| Electricalslytical       |
+| Sound                    |
+| Power                    |
+| Path                     |
+| Insight                  |
+| Control                  |
+| Sage                     |
+| Electricalsocity         |
+| Synthetic                |
+| Zone                     |
+| Elite                    |
+| All-Out                  |
+| Expression               |
+| Relief                   |
+| Novus                    |
+| Propel                   |
+| Leader                   |
++--------------------------+
+38 rows in set (0.00 sec)
+
+mysql> select custmer_name, customer_type from customers;
++--------------------------+----------------+
+| custmer_name             | customer_type  |
++--------------------------+----------------+
+| Surge Stores             | Brick & Mortar |
+| Nomad Stores             | Brick & Mortar |
+| Excel Stores             | Brick & Mortar |
+| Surface Stores           | Brick & Mortar |
+| Premium Stores           | Brick & Mortar |
+| Electricalsara Stores    | Brick & Mortar |
+| Info Stores              | Brick & Mortar |
+| Acclaimed Stores         | Brick & Mortar |
+| Electricalsquipo Stores  | Brick & Mortar |
+| Atlas Stores             | Brick & Mortar |
+| Flawless Stores          | Brick & Mortar |
+| Integration Stores       | Brick & Mortar |
+| Unity Stores             | Brick & Mortar |
+| Forward Stores           | Brick & Mortar |
+| Electricalsbea Stores    | Brick & Mortar |
+| Logic Stores             | Brick & Mortar |
+| Epic Stores              | Brick & Mortar |
+| Electricalslance Stores  | Brick & Mortar |
+| Electricalsopedia Stores | Brick & Mortar |
+| Nixon                    | E-Commerce     |
+| Modular                  | E-Commerce     |
+| Electricalslytical       | E-Commerce     |
+| Sound                    | E-Commerce     |
+| Power                    | E-Commerce     |
+| Path                     | E-Commerce     |
+| Insight                  | E-Commerce     |
+| Control                  | E-Commerce     |
+| Sage                     | E-Commerce     |
+| Electricalsocity         | E-Commerce     |
+| Synthetic                | E-Commerce     |
+| Zone                     | E-Commerce     |
+| Elite                    | E-Commerce     |
+| All-Out                  | E-Commerce     |
+| Expression               | E-Commerce     |
+| Relief                   | E-Commerce     |
+| Novus                    | E-Commerce     |
+| Propel                   | E-Commerce     |
+| Leader                   | E-Commerce     |
++--------------------------+----------------+
+38 rows in set (0.00 sec)
+
+mysql> select * from customers where customer_code='Cus002';
++---------------+--------------+----------------+
+| customer_code | custmer_name | customer_type  |
++---------------+--------------+----------------+
+| Cus002        | Nomad Stores | Brick & Mortar |
++---------------+--------------+----------------+
+1 row in set (0.00 sec)
+
+mysql> describe customers;
++---------------+-------------+------+-----+---------+-------+
+| Field         | Type        | Null | Key | Default | Extra |
++---------------+-------------+------+-----+---------+-------+
+| customer_code | varchar(45) | NO   | PRI | NULL    |       |
+| custmer_name  | varchar(45) | YES  |     | NULL    |       |
+| customer_type | varchar(45) | YES  |     | NULL    |       |
++---------------+-------------+------+-----+---------+-------+
+3 rows in set (0.01 sec)
+
+mysql> create database AprilDS2026;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| aprilds2026        |
+| information_schema |
+| monthly_sales      |
+| mysql              |
+| performance_schema |
+| primacy            |
+| sakila             |
+| sales              |
+| sys                |
+| workbenc_example   |
+| world              |
++--------------------+
+11 rows in set (0.00 sec)
+use aprilds2026;
+Database changed
+mysql> show tables;
+Empty set (0.00 sec)
+
+mysql> create table Student(Id int primary key, Student_name Varchar(30), Score int);
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> show tables;
++-----------------------+
+| Tables_in_aprilds2026 |
++-----------------------+
+| student               |
++-----------------------+
+1 row in set (0.00 sec)
+
+mysql> describe student;
++--------------+-------------+------+-----+---------+-------+
+| Field        | Type        | Null | Key | Default | Extra |
++--------------+-------------+------+-----+---------+-------+
+| Id           | int         | NO   | PRI | NULL    |       |
+| Student_name | varchar(30) | YES  |     | NULL    |       |
+| Score        | int         | YES  |     | NULL    |       |
++--------------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+
+mysql> insert into Student values(001, 'Mahmud', 70);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Student values(002, 'Musfik', 80),(003, 'Mahfuz', 90);
+Query OK, 2 rows affected (0.01 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> select * from student;
++----+--------------+-------+
+| Id | Student_name | Score |
++----+--------------+-------+
+|  1 | Mahmud       |    70 |
+|  2 | Musfik       |    80 |
+|  3 | Mahfuz       |    90 |
++----+--------------+-------+
+3 rows in set (0.00 sec)
+
+mysql>
